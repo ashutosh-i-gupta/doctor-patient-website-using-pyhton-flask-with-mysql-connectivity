@@ -1,0 +1,57 @@
+{% extends "base.html" %} 
+{% block title %}view form{% endblock %}
+{% block content %}
+<form class="row g-3" method="POST">
+    <div class="col-md-2">
+      <label for="pid" class="form-label">patient Id</label>
+      <input type="number" class="form-control" id="eid" name="pid" value="{{user.pid}}" readonly>
+    </div>
+    <div class="col-md-4">
+      <label for="pfname" class="form-label">patient first name</label>
+      <input type="text" class="form-control" id="pfname" name="pfname" value="{{user.pfname}}" readonly>
+    </div>
+    <div class="col-4">
+      <label for="plname" class="form-label">patient last name</label>
+      <input type="text" class="form-control" id="plname" name="plname" value="{{user.plname}}" readonly>
+    </div>
+    <div class="col-4">
+      <label for="pnumber" class="form-label">phone number</label>
+      <input type="text" class="form-control" id="pnumber"name="pnumber" value="{{user.pgender}}"  readonly>
+    </div>
+    <div class="col-md-2">
+      <label for="pgender" class="form-label">gender</label>
+      <input type="text" class="form-control" id="pgender" name="gender" value="{{user.pnumber}}" readonly>
+    </div>
+    <div class="col-md-4">
+      <label for="pemail" class="form-label">email</label>
+      <input type="text" class="form-control" id="pemail" name="pemail" value="{{user.paddress}}" readonly>
+      
+    </div>
+    <div class="col-md-4">
+      <label for="paddress" class="form-label">address</label>
+      <input type="text" class="form-control" id="paddress" name="paddress" value="{{user.pstate}}" readonly>
+    </div>
+    <div class="col-md-4">
+        <label for="pstate" class="form-label">state</label>
+        <input type="text" class="form-control" id="pstate" name="pstate" value="{{user.pcity}}" readonly>
+      </div>
+      <div class="col-md-4">
+        <label for="pcity" class="form-label">city</label>
+        <input type="text" class="form-control" id="pcity" name="pcity" value="{{user.pzipcode}}" readonly>
+      </div>
+      <div class="col-md-4">
+        <label for="pzipcode" class="form-label">zipcode</label>
+        <input type="text" class="form-control" id="pzipcode" name="pzipcode" value="{{user.pemail}}"readonly>
+      </div>
+      <div class="col-md-4">
+        <label for="disease" class="form-label">Your disease</label>
+        <input type="text" class="form-control" id="disease" name="pdisease" value="{{user.pdisease}}" readonly>
+      </div>
+      <div class="col-md-4">
+        <label for="dfname" class="form-label">doctor name</label>
+        <input type="text" class="form-control" id="dfname" name="dfname" value="{{user.dfname}}" readonly>
+      </div>
+      <a href="/profile"button type="submit" class="btn btn-primary">profile</button>
+    </div>
+  </form>
+  {% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    make Appointment
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <table class="table">
+            <thead>  <!-- table head-->
+                <tr> <!--tr: table row-->
+                    <th>Id</th>   <!--th: table columns heading-->
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>phone number</th>
+                    <th>gender</th>
+                    <th>zip code</th>
+                    <th>email id </th>
+                    <th>address</th>
+                    <th>state</th>
+                    <th>city</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>  <!--table body-->
+                
+                {% for pat in patlist %}
+                    <tr>
+                        <td>{{pat.pid}}</td>
+                        <td>{{pat.pfname}}</td>
+                        <td>{{pat.plname}}</td>
+                        <td>{{pat.pgender}}</td>
+                        <td>{{pat.pnumber}}</td>
+                        <td>{{pat.pemail}}</td>
+                        <td>{{pat.paddress}}</td>
+                        <td>{{pat.pstate}}</td>
+                        <td>{{pat.pcity}}</td>
+                        <td>{{pat.pzipcode}}</td>
+                        
+                        <td>
+                            <a href="/delete/{{pat.eid}}" class="btn btn-danger" onclick="return confirm('do you want delete')">
+                                Delete</a>
+                            <a href="/edit/{{pat.eid}}" class="btn btn-warning" onclick="return confirm('do you want to edit')">
+                                Edit</a>
+                
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+        </table>
+    </div>
+{% endblock content %}
